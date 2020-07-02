@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>demo</title>
+</head>
+<body>
+    <h1>this is a demo page</h1>
+    <p>编号:{{.id}}</p>
+    <p>名称:<input type="text" value="{{.name}}"/></p>
+    <p>
+        性别:
+        <select>
+            {{range $key, $value := .options}}
+            <option value="{{$value}}">{{$key}}</option>
+            {{end}}
+        </select>
+    </p>
+</body>
+</html>

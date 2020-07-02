@@ -1,0 +1,191 @@
+package comjia
+
+import "julive/components/db"
+
+type CjProject struct {
+	ProjectID              int64   `gorm:"column:project_id;primary_key" json:"project_id"`
+	IsImportentNotice      int64   `gorm:"column:is_importent_notice" json:"is_importent_notice"`
+	SeeProjectNote         string  `gorm:"column:see_project_note" json:"see_project_note"`
+	ReportSeeProjectNote   string  `gorm:"column:report_see_project_note" json:"report_see_project_note"`
+	ProjectNum             string  `gorm:"column:project_num" json:"project_num"`
+	Name                   string  `gorm:"column:name" json:"name"`
+	Summary                string  `gorm:"column:summary" json:"summary"`
+	GroupProjectID         int64   `gorm:"column:group_project_id" json:"group_project_id"`
+	TagBak                 string  `gorm:"column:tag_bak" json:"tag_bak"`
+	PropertyRight          string  `gorm:"column:property_right" json:"property_right"`
+	LiveDate               int64   `gorm:"column:live_date" json:"live_date"`
+	Decorate               string  `gorm:"column:decorate" json:"decorate"`
+	DecorateMoney          float64 `gorm:"column:decorate_money" json:"decorate_money"`
+	Far                    string  `gorm:"column:far" json:"far"`
+	Heating                string  `gorm:"column:heating" json:"heating"`
+	CarSpace               string  `gorm:"column:car_space" json:"car_space"`
+	Greening               string  `gorm:"column:greening" json:"greening"`
+	ManageFee              string  `gorm:"column:manage_fee" json:"manage_fee"`
+	WaterElectricity       string  `gorm:"column:water_electricity" json:"water_electricity"`
+	BusinessLayout         string  `gorm:"column:business_layout" json:"business_layout"`
+	Developer              string  `gorm:"column:developer" json:"developer"`
+	PropertyServices       string  `gorm:"column:property_services" json:"property_services"`
+	BuildOperation         string  `gorm:"column:build_operation" json:"build_operation"`
+	Landscaping            string  `gorm:"column:landscaping" json:"landscaping"`
+	QualityLabel           string  `gorm:"column:quality_label" json:"quality_label"`
+	CurrentOpenTime        int64   `gorm:"column:current_open_time" json:"current_open_time"`
+	CurrentSets            string  `gorm:"column:current_sets" json:"current_sets"`
+	NextOpenTime           int64   `gorm:"column:next_open_time" json:"next_open_time"`
+	NextSets               string  `gorm:"column:next_sets" json:"next_sets"`
+	FullPayRate            float64 `gorm:"column:full_pay_rate" json:"full_pay_rate"`
+	LoanPayRate            float64 `gorm:"column:loan_pay_rate" json:"loan_pay_rate"`
+	LastMonthRate          float64 `gorm:"column:last_month_rate" json:"last_month_rate"`
+	CurrentRate            float64 `gorm:"column:current_rate" json:"current_rate"`
+	LastMonthDealPrice     float64 `gorm:"column:last_month_deal_price" json:"last_month_deal_price"`
+	Address                string  `gorm:"column:address" json:"address"`
+	RingRoad               float64 `gorm:"column:ring_road" json:"ring_road"`
+	NearDistance           string  `gorm:"column:near_distance" json:"near_distance"`
+	FarDistance            string  `gorm:"column:far_distance" json:"far_distance"`
+	AdminID                int64   `gorm:"column:admin_id" json:"admin_id"`
+	SubmitTime             int64   `gorm:"column:submit_time" json:"submit_time"`
+	IndexImg               string  `gorm:"column:index_img" json:"index_img"`
+	QualityImg             string  `gorm:"column:quality_img" json:"quality_img"`
+	Coordinate             string  `gorm:"column:coordinate" json:"coordinate"`
+	Enstate                string  `gorm:"column:enstate" json:"enstate"`
+	EnPlanImg              string  `gorm:"column:en_plan_img" json:"en_plan_img"`
+	EnPlanText             string  `gorm:"column:en_plan_text" json:"en_plan_text"`
+	EnPlanDoc              string  `gorm:"column:en_plan_doc" json:"en_plan_doc"`
+	EnAirNum               float64 `gorm:"column:en_air_num" json:"en_air_num"`
+	EnVoiceNum             float64 `gorm:"column:en_voice_num" json:"en_voice_num"`
+	EnBad                  string  `gorm:"column:en_bad" json:"en_bad"`
+	EnBadDoc               string  `gorm:"column:en_bad_doc" json:"en_bad_doc"`
+	AmbitusText            string  `gorm:"column:ambitus_text" json:"ambitus_text"`
+	DistrictID             int64   `gorm:"column:district_id" json:"district_id"`
+	DistrictName           string  `gorm:"column:district_name" json:"district_name"`
+	ProjectType            int64   `gorm:"column:project_type" json:"project_type"`
+	AcreageMin             float64 `gorm:"column:acreage_min" json:"acreage_min"`
+	AcreageMax             float64 `gorm:"column:acreage_max" json:"acreage_max"`
+	PriceMin               float64 `gorm:"column:price_min" json:"price_min"`
+	PriceMax               float64 `gorm:"column:price_max" json:"price_max"`
+	Phone                  string  `gorm:"column:phone" json:"phone"`
+	EnrollNum              int64   `gorm:"column:enroll_num" json:"enroll_num"`
+	SchoolDistrictRoom     int64   `gorm:"column:school_district_room" json:"school_district_room"`
+	NearSubway             int64   `gorm:"column:near_subway" json:"near_subway"`
+	NearSubwayList         string  `gorm:"column:near_subway_list" json:"near_subway_list"`
+	GoodDecorate           int64   `gorm:"column:good_decorate" json:"good_decorate"`
+	SuccessRate            float64 `gorm:"column:success_rate" json:"success_rate"`
+	IsEstimate             int64   `gorm:"column:is_estimate" json:"is_estimate"`
+	Status                 int     `gorm:"column:status" json:"status"`
+	Alias                  string  `gorm:"column:alias" json:"alias"`
+	SchoolDistrictRoomList string  `gorm:"column:school_district_room_list" json:"school_district_room_list"`
+	NearSubwayStationList  string  `gorm:"column:near_subway_station_list" json:"near_subway_station_list"`
+	IsCooperate            int64   `gorm:"column:is_cooperate" json:"is_cooperate"`
+	SaleNum                int64   `gorm:"column:sale_num" json:"sale_num"`
+	UpdateDatetime         int64   `gorm:"column:update_datetime" json:"update_datetime"`
+	CreateDatetime         int64   `gorm:"column:create_datetime" json:"create_datetime"`
+	PayInfo                string  `gorm:"column:pay_info" json:"pay_info"`
+	IsDiscount             int64   `gorm:"column:is_discount" json:"is_discount"`
+	Updator                int64   `gorm:"column:updator" json:"updator"`
+	ClickNum               int64   `gorm:"column:click_num" json:"click_num"`
+	ErrorAlias             string  `gorm:"column:error_alias" json:"error_alias"`
+	IsOutreach             int64   `gorm:"column:is_outreach" json:"is_outreach"`
+	RecentInstructions     string  `gorm:"column:recent_instructions" json:"recent_instructions"`
+	LatLng                 string  `gorm:"column:lat_lng" json:"lat_lng"`
+	Lng                    string  `gorm:"column:lng" json:"lng"`
+	Lat                    string  `gorm:"column:lat" json:"lat"`
+	TradeArea              int64   `gorm:"column:trade_area" json:"trade_area"`
+	IsLoft                 int64   `gorm:"column:is_loft" json:"is_loft"`
+	CardTiming             int64   `gorm:"column:card_timing" json:"card_timing"`
+	CompetitiveProject     string  `gorm:"column:competitive_project" json:"competitive_project"`
+	EcFlow                 int64   `gorm:"column:ec_flow" json:"ec_flow"`
+	DuringSalePeriod       int64   `gorm:"column:during_sale_period" json:"during_sale_period"`
+	TakeLandOld            int64   `gorm:"column:take_land_old" json:"take_land_old"`
+	TakeLand               string  `gorm:"column:take_land" json:"take_land"`
+	IsParkBuilding         int64   `gorm:"column:is_park_building" json:"is_park_building"`
+	IsPersonalSteward      int64   `gorm:"column:is_personal_steward" json:"is_personal_steward"`
+	Tag                    string  `gorm:"column:tag" json:"tag"`
+	CompetitiveProjectName string  `gorm:"column:competitive_project_name" json:"competitive_project_name"`
+	ArchitecturalStyle     string  `gorm:"column:architectural_style" json:"architectural_style"`
+	ElitePlate             string  `gorm:"column:elite_plate" json:"elite_plate"`
+	BuildingInfo           string  `gorm:"column:building_info" json:"building_info"`
+	ReportSeeProjectImg    string  `gorm:"column:report_see_project_img" json:"report_see_project_img"`
+	RecentInstructionsImg  string  `gorm:"column:recent_instructions_img" json:"recent_instructions_img"`
+	Forecast               int64   `gorm:"column:forecast" json:"forecast"`
+	DiyIcon                string  `gorm:"column:diy_icon" json:"diy_icon"`
+	SeoTitle               string  `gorm:"column:seo_title" json:"seo_title"`
+	SeoDescription         string  `gorm:"column:seo_description" json:"seo_description"`
+	SeoKeywords            string  `gorm:"column:seo_keywords" json:"seo_keywords"`
+	CityID                 int     `gorm:"column:city_id" json:"city_id"`
+	IsShow                 int64   `gorm:"column:is_show" json:"is_show"`
+	SamePriceProjectIds    string  `gorm:"column:same_price_project_ids" json:"same_price_project_ids"`
+	SignNum                int64   `gorm:"column:sign_num" json:"sign_num"`
+	SeeNum                 int     `gorm:"column:see_num" json:"see_num"`
+	OperationScore         int64   `gorm:"column:operation_score" json:"operation_score"`
+	IsGroupSource          int64   `gorm:"column:is_group_source" json:"is_group_source"`
+	LatestHistoryPrice     float64 `gorm:"column:latest_history_price" json:"latest_history_price"`
+	LatestChangeTime       int64   `gorm:"column:latest_change_time" json:"latest_change_time"`
+	DiyText                string  `gorm:"column:diy_text" json:"diy_text"`
+	DiyShowStartDate       int64   `gorm:"column:diy_show_start_date" json:"diy_show_start_date"`
+	DiyShowEndDate         int64   `gorm:"column:diy_show_end_date" json:"diy_show_end_date"`
+	SpecialFieldCfg        int64   `gorm:"column:special_field_cfg" json:"special_field_cfg"`
+	IsHaveHouseType        int     `gorm:"column:is_have_house_type" json:"is_have_house_type"`
+	PaybackEmployeeID      int64   `gorm:"column:payback_employee_id" json:"payback_employee_id"`
+	Remark                 string  `gorm:"column:remark" json:"remark"`
+	BandStatus             int     `gorm:"column:band_status" json:"band_status"`
+	CooperateRemark        string  `gorm:"column:cooperate_remark" json:"cooperate_remark"`
+	GeneralScore           int64   `gorm:"column:general_score" json:"general_score"`
+	DistrictGeneralScore   int     `gorm:"column:district_general_score" json:"district_general_score"`
+	PaybackEmployeeMobile  string  `gorm:"column:payback_employee_mobile" json:"payback_employee_mobile"`
+	PanoramaCode           string  `gorm:"column:panorama_code" json:"panorama_code"`
+	CurrentPriceType       int64   `gorm:"column:current_price_type" json:"current_price_type"`
+	LatestHistoryPriceType int64   `gorm:"column:latest_history_price_type" json:"latest_history_price_type"`
+	PriceDesc              string  `gorm:"column:price_desc" json:"price_desc"`
+	PriceType              int64   `gorm:"column:price_type" json:"price_type"`
+	PlateLongitude         string  `gorm:"column:plate_longitude" json:"plate_longitude"`
+	PlateLatitudes         string  `gorm:"column:plate_latitudes" json:"plate_latitudes"`
+	BuildingImg            string  `gorm:"column:building_img" json:"building_img"`
+	BuildingImgSize        string  `gorm:"column:building_img_size" json:"building_img_size"`
+	ProjectIntroduce       string  `gorm:"column:project_introduce" json:"project_introduce"`
+	OldPayInfo             string  `gorm:"column:old_pay_info" json:"old_pay_info"`
+	IsOldDiscount          int64   `gorm:"column:is_old_discount" json:"is_old_discount"`
+	LiveDateYear           int     `gorm:"column:live_date_year" json:"live_date_year"`
+	LiveDateMonth          int     `gorm:"column:live_date_month" json:"live_date_month"`
+	LiveDateDay            int     `gorm:"column:live_date_day" json:"live_date_day"`
+	LiveDateTen            int     `gorm:"column:live_date_ten" json:"live_date_ten"`
+	OpenTimeYear           int     `gorm:"column:open_time_year" json:"open_time_year"`
+	OpenTimeMonth          int     `gorm:"column:open_time_month" json:"open_time_month"`
+	OpenTimeDay            int     `gorm:"column:open_time_day" json:"open_time_day"`
+	OpenTimeTen            int     `gorm:"column:open_time_ten" json:"open_time_ten"`
+	SpecialPriceHouseDesc  string  `gorm:"column:special_price_house_desc" json:"special_price_house_desc"`
+	IsSpecialPriceHouse    int64   `gorm:"column:is_special_price_house" json:"is_special_price_house"`
+	BrandDeveloper         string  `gorm:"column:brand_developer" json:"brand_developer"`
+	OnSaleNum              int64   `gorm:"column:on_sale_num" json:"on_sale_num"`
+	PushProjectNum         int64   `gorm:"column:push_project_num" json:"push_project_num"`
+	PushProjectYear        int64   `gorm:"column:push_project_year" json:"push_project_year"`
+	PushProjectMonth       int64   `gorm:"column:push_project_month" json:"push_project_month"`
+	PushProjectDay         int64   `gorm:"column:push_project_day" json:"push_project_day"`
+	PushProjectTen         int64   `gorm:"column:push_project_ten" json:"push_project_ten"`
+	OrderNum               int64   `gorm:"column:order_num" json:"order_num"`
+	IsHaveModelRoom        int     `gorm:"column:is_have_model_room" json:"is_have_model_room"`
+	TakeLandPrice          float64 `gorm:"column:take_land_price" json:"take_land_price"`
+	IsContinuePush         int     `gorm:"column:is_continue_push" json:"is_continue_push"`
+	Creator                int     `gorm:"column:creator" json:"creator"`
+	IsFolderSpecial        int64   `gorm:"column:is_folder_special" json:"is_folder_special"`
+	AbtestGeneralScore     int     `gorm:"column:abtest_general_score" json:"abtest_general_score"`
+	MatchType              int64   `gorm:"column:match_type" json:"match_type"`
+	DataFrom               int     `gorm:"column:data_from" json:"data_from"`
+	ProjectDesc            string  `gorm:"column:project_desc" json:"project_desc"`
+	VolumeStatus           int64   `gorm:"column:volume_status" json:"volume_status"`
+	PayTitle               string  `gorm:"column:pay_title" json:"pay_title"`
+	ProjectVideoNum        int     `gorm:"column:project_video_num" json:"project_video_num"`
+	VolumeDatePre          int     `gorm:"column:volume_date_pre" json:"volume_date_pre"`
+	VolumeDateDone         int     `gorm:"column:volume_date_done" json:"volume_date_done"`
+	ProjectVrType          int     `gorm:"column:project_vr_type" json:"project_vr_type"`
+}
+
+func (c *CjProject) TableName() string {
+	return "cj_project"
+}
+
+func (c *CjProject) GeByID(id int64) error {
+	err := db.Get("comjia").Where("project_id = ? ", id).First(&c).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}

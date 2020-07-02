@@ -1,0 +1,18 @@
+component:
+    db:
+        comjia:
+            host: "127.0.0.1"
+            port: 33060
+            user: "comjia002_wukong"
+            password: "affda33ac32"
+            database: "comjia_merge"
+    redis:
+        comjia:
+            host: "127.0.0.1"
+            port: 63790
+            password: ""
+            db: 0
+    log:
+        console: true
+        level: "debug"
+        dir : "./logs/"

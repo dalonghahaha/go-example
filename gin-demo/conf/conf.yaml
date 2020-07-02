@@ -1,0 +1,32 @@
+server:
+    mode: "debug"
+    port: "10087"
+component:
+    db:
+        comjia:
+            host: "127.0.0.1"
+            port: 33060
+            user: "comjia002_wukong"
+            password: "affda33ac32"
+            database: "comjia_merge"
+        hr:
+            host: "127.0.0.1"
+            port: 33060
+            user: "comjia002_wukong"
+            password: "affda33ac32"
+            database: "julive_hr"
+    redis:
+        defaut:
+            host: "127.0.0.1"
+            port: 6379
+            password: ""
+            db: 0
+        business:
+            host: "127.0.0.1"
+            port: 6379
+            password: ""
+            db: 1
+    log:
+        console: true
+        level: "debug"
+        dir : "./logs/"
